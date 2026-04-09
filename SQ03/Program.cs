@@ -110,12 +110,12 @@ Student student = new Student
 };
 
 //This throws error because we cannot instantiate an abstract class directly.
-MyAbstractClass teacher = new MyAbstractClass
-{
-    Id = 2,
-    FirstName = "John",
-    LastName = "Doe",
-};
+//MyAbstractClass teacher = new MyAbstractClass
+//{
+//    Id = 2,
+//    FirstName = "John",
+//    LastName = "Doe",
+//};
 
 Student.StaticMethod();
 
