@@ -1,9 +1,11 @@
-﻿var num = 0;
+﻿using Week1Project;
 
-Greeting(out  num);
+var num = 0;
+
+//Greeting(out  num);
 if(num == 0)
 {
-    Greeting(out num);
+    //Greeting(out num);
 }
 
 
@@ -30,3 +32,34 @@ void Greeting(out int num)
     num = ourNum;
 }
 
+List<Car> cars = new List<Car>
+{
+    new Car { Doors = 4, Name = "Toyota", Model = "Corolla" },
+    new Car { Doors = 2, Name = "Honda", Model = "Civic" },
+    new Car { Doors = 4, Name = "Ford", Model = "Mustang" },
+    new Car { Doors = 2, Name = "Ford", Model = "Edge" },
+    new Car { Doors = 4, Name = "Ford", Model = "Explorer" },
+    new Car { Doors = 4, Name = "Honda", Model = "Accord" },
+    new Car { Doors = 3, Name = "Honda", Model = "Civic" },
+    new Car { Doors = 4, Name = "Toyota", Model = "Camry" }
+};
+
+
+var toyotaCars = from c in cars
+                 where c.Name == "Toyota"
+                    select c;
+
+var toyoCars2 = cars.Where(c => c.Name == "Toyota");
+
+Console.WriteLine(toyotaCars.Count());
+
+var allDcars =from car in cars 
+              where car.Name.Contains('d') 
+              select car;
+var allDcars2 = cars.Where(car => car.Name.Contains('d'));
+
+
+
+var groupedCars = from car in cars
+                  group car by car.Name;
+Console.WriteLine(groupedCars.Count());
