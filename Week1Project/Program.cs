@@ -63,3 +63,18 @@ var allDcars2 = cars.Where(car => car.Name.Contains('d'));
 var groupedCars = from car in cars
                   group car by car.Name;
 Console.WriteLine(groupedCars.Count());
+
+Car car2 = new Car();
+Console.WriteLine($"Name: {car2.Name}, Model: {car2.Model}, Doors: {car2.Doors}");
+var car1 = new Car("Toyota", "Avensis");
+
+var viewModel = new ClassViewModel(car2);
+
+var listOfViewModels = ClassViewModel.ListViewModel(cars);
+
+foreach(var model in listOfViewModels)
+{
+    Console.WriteLine(model.Name);
+    Console.WriteLine(model.Model);
+    Console.WriteLine("\n");
+}
