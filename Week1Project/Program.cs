@@ -1,4 +1,5 @@
 ﻿using Week1Project;
+using static Week1Project.DelegateExmaple;
 
 var num = 0;
 
@@ -78,3 +79,19 @@ foreach(var model in listOfViewModels)
     Console.WriteLine(model.Model);
     Console.WriteLine("\n");
 }
+PlayWithNumber play = DelegateExmaple.Add;
+play += DelegateExmaple.Subtract;
+play += DelegateExmaple.Multiply;
+play += DelegateExmaple.Divide;
+
+play.Invoke(6, 7);
+
+//IEnumerable 
+
+var toyotas = cars.Where(c => c.Name == "Toyota");
+
+DelegateExmaple.Multiply(5, 6);
+
+//Enum
+
+Console.WriteLine(Employeeype.PartTime);

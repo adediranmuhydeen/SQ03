@@ -40,3 +40,62 @@ public class ClassViewModel
         return cars.Select(c => new ClassViewModel(c)).ToList();
     }
 }
+
+
+public class  DelegateExmaple
+{
+    public delegate int PlayWithNumber(int b, int a);
+
+    public static int Add(int a, int b)
+    {
+        Console.WriteLine("This is Add method\n");
+
+        return a + b;
+    }
+
+    public static  int Subtract(int a, int b)
+    {
+        Console.WriteLine("This is Subtract method\n");
+        return a - b;
+    }
+
+    /// <summary>
+    /// Method to mutiply two numbers
+    /// </summary>
+    /// <param name="a" >First number to be multiplied</param>
+    /// <param name="b">Second Number to be multiplied</param>
+    /// <returns>int which is a product of both a and b</returns>
+    public static int Multiply(int a, int b)
+    {
+        Console.WriteLine("This is Multiply method\n");
+
+        return a * b;
+    }
+    public static int Divide(int a, int b)
+    {
+        Console.WriteLine("This is Division method\n");
+
+        return a / b;
+    }
+
+    
+
+    // public void Run()
+    //{
+    //    Console.WriteLine(play(5, 10));
+    //    play = Subtract;
+    //    Console.WriteLine(play(5, 10));
+    //    play = Multiply;
+    //    Console.WriteLine(play(5, 10));
+    //    play = Divide;
+    //    Console.WriteLine(play(5, 10));
+    //}
+
+}
+
+public enum Employeeype
+{
+    FullTime ,
+    PartTime,
+    Contractor
+}
