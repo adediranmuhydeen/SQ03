@@ -1,4 +1,7 @@
-﻿namespace Week1Project;
+﻿using Microsoft.Data.SqlClient;
+using System.Data.SqlClient;
+
+namespace Week1Project;
 
 public class Car
 {
@@ -20,6 +23,14 @@ public class Car
         Name = name;
         Model = model;
     }
+}
+
+public class Coupon
+{
+    public Guid Id { get; set; }
+    public string CouponCode { get; set; } = string.Empty;
+    public decimal DiscountAmount { get; set; }
+    public int MinAmount { get; set; }
 }
 
 public class ClassViewModel
@@ -98,4 +109,24 @@ public enum Employeeype
     FullTime ,
     PartTime,
     Contractor
+}
+
+public class  EmployeesService
+{
+     //string cs = "Server=THE-DELES;Database=EcomerceCoupon;Trusted_Connection=true;";
+
+    public static async Task GetCoupons()
+    {
+        var cs = "Server=THE-DELES;Database=EcomerceCoupon;Trusted_Connection=True;TrustServerCertificate=True;";
+        SqlConnection cnn = new(cs);
+        await cnn.OpenAsync();
+        var query = $"Select * From Coupons";
+
+        using (SqlCommand cmd = new(query, cnn))
+        {
+            SqlDataReader dr = cmd.ExecuteReader();
+            Console.WriteLine("data has been read");
+        }
+    }
+
 }

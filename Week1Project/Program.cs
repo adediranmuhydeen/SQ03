@@ -1,4 +1,5 @@
-﻿using Week1Project;
+﻿using Microsoft.Data.SqlClient;
+using Week1Project;
 using static Week1Project.DelegateExmaple;
 
 var num = 0;
@@ -95,3 +96,5 @@ DelegateExmaple.Multiply(5, 6);
 //Enum
 
 Console.WriteLine(Employeeype.PartTime);
+
+await EmployeesService.GetCoupons();
